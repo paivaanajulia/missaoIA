@@ -5,24 +5,24 @@ const caixaResultado = document.querySelector('.caixa-resultado');
 const textoResultado = document.querySelector('.texto-resultado');
 
  const perguntas = [
-    {
+    { 
         enunciado: "qual pais tem o maior indice de pobreza?"
         alternativas: [
         {
             texto:"Africa"
-            afirmação:"Afirmação da alternativa 1"
+            afirmação:""
         },
 
         { texto:"Somália"
-          afirmação: "afirmação da alternativa 2"
+          afirmação: ""
        },
 
        {  texto:"Suiça"
-        afirmação:"afirmação a alternativa 3"
+        afirmação:""
       },
 
        { texto:"Cuba"
-         afirmação:"afirmação da alternativa 4"
+         afirmação:""
             },
              ]
       {,
@@ -51,11 +51,37 @@ const textoResultado = document.querySelector('.texto-resultado');
         {
 
          enunciado: "qual dos seguintes fatores e mais frequentemente citado como uma causa primaria da desigualdade social em sociedade modernas?"
-         alternativas: [
+         alternativas: [,
             {
                 texto:"Distribuição desigualdade de requeza e renda",
                 afirmação:""
                },
-            }
-         ]
+
+              {texto:"Localizção geográfica",
+               afirmação:""
+              },
+
+              {texto:"preferencia culturais",
+              afirmação:""
+            },
+
+            {texto:"Condições climáticas",
+             afirmação:""
+            },
+            ]
+        },
+       ];
+
+       let atual = 0;
+       let perguntaAtual;
+       let historiafinal = "";
+
+       function mostraPergunta() {
+        if(atual>= perguntaAtual.length) {
+          mostraResultado();
+          return;
         }
+        perguntaAtual = perguntas[atual];
+        caixaPerguntas.textContent = perguntaAtual.enunciado;
+        caixaAlternativas.textContent = perguntaAtual.enunciado;
+       }
